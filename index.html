@@ -19,6 +19,7 @@
 		container.replaceChildren(player);
 		const params = new URLSearchParams(location.search);
 		await player.load(params.get("nazwa")||"bijatyka_kononowicz.swf");
+		document.querySelector('src="placeholder.png"').style = "visibility: hidden;";
 		setTimeout(_=>document.querySelector('#load-info').remove(), 1000);
 	});
 </script>
