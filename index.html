@@ -14,7 +14,7 @@
 		const ruffle = window.RufflePlayer.newest();
 		const player = ruffle.createPlayer();
 		const container = document.getElementById("container");
-		container.appendChild(player);
+		container.replaceChildren(player);
 		player.style.width = "1200px";
 		player.style.height = "600px";
 		const params = new URLSearchParams(location.search);
@@ -22,7 +22,7 @@
 	});
 </script>
 <script src="ruffle.js"></script>
-<div id="container"></div>
+<div id="container"><img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600></div>
 
 </body>
 </html>
