@@ -10,15 +10,15 @@
 	
 <script>
 	window.RufflePlayer = window.RufflePlayer || {};
-	window.addEventListener("load", (event) => {
+	window.addEventListener("load", async (event) => {
 		const ruffle = window.RufflePlayer.newest();
 		const player = ruffle.createPlayer();
 		const container = document.getElementById("container");
-		container.replaceChildren(player);
 		player.style.width = "1200px";
 		player.style.height = "600px";
 		const params = new URLSearchParams(location.search);
-		player.load(params.get("nazwa")||"bijatyka_kononowicz.swf");
+		await player.load(params.get("nazwa")||"bijatyka_kononowicz.swf");
+		container.replaceChildren(player);
 	});
 </script>
 <script src="ruffle.js"></script>
