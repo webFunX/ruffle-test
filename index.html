@@ -16,13 +16,15 @@
 		const container = document.getElementById("container");
 		player.style.width = "1200px";
 		player.style.height = "600px";
+		container.replaceChildren(player);
 		const params = new URLSearchParams(location.search);
 		await player.load(params.get("nazwa")||"bijatyka_kononowicz.swf");
-		container.replaceChildren(player);
 	});
 </script>
 <script src="ruffle.js"></script>
-<div id="container"><img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600></div>
+<div id="container" style="position: relative;">
+	<img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600 style="position: absolute;">
+	</div>
 
 </body>
 </html>
