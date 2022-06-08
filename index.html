@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ruffle gierka</title>
 </head>
-<body>
+<body style="position: relative;">
 	
 <script>
 	window.RufflePlayer = window.RufflePlayer || {};
@@ -19,12 +19,12 @@
 		container.replaceChildren(player);
 		const params = new URLSearchParams(location.search);
 		await player.load(params.get("nazwa")||"bijatyka_kononowicz.swf");
+		document.querySelector('[src="placeholder.png"]').remove();
 	});
 </script>
 <script src="ruffle.js"></script>
-<div id="container" style="position: relative;">
-	<img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600 style="position: absolute;">
-	</div>
+<div id="container"></div>
+<img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600 style="position: absolute; top: 0;">Trwa ładowanie...</img>
 
 </body>
 </html>
