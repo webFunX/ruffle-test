@@ -19,14 +19,15 @@
 		container.replaceChildren(player);
 		const params = new URLSearchParams(location.search);
 		await player.load(params.get("nazwa")||"bijatyka_kononowicz.swf");
-		document.querySelector('[src="placeholder.png"]').remove();
-		document.querySelector('#load-info').remove();
+		setTimeout(_=>document.querySelector('#load-info').remove(), 1000);
 	});
 </script>
 <script src="ruffle.js"></script>
 <div id="container"></div>
-<img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600 style="position: absolute; top: 0;">
-<span id="load-info">Trwa ładowanie...</span>
+<div  id="load-info" style="position: absolute; top: 0;">
+<img src="placeholder.png" alt="placeholder gry" title="Trwa ładowanie..." width=1200 height=600>
+<span>Trwa ładowanie...</span>
+</div>
 
 </body>
 </html>
